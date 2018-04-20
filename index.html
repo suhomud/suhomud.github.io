@@ -7,9 +7,18 @@
 </style>
 </head>
 <body>
+  <script>
+  fetch("https://fuck-logic.firebaseio.com/tips/0/value.json").then(function(response) {
+    response.text().then(function(jsonresponse) {
+      var responseObj = JSON.parse(jsonresponse);
+      var maintargetText = document.getElementById("tipsText");
+      maintargetText.textContent = responseObj;
+    });
+  });
+  </script>
   <div>
     <h1>
-      <i>J'adore</i>
+      <i  id="tipsText"></i>	
     </h1>
   </div>
 </body>
